@@ -1,4 +1,4 @@
-#1
+1
 print("Hello World"[8])
 
 #2
@@ -30,7 +30,7 @@ print(f"Hi, my name is {name} and i'm {age} years old")
 print(f"Hi, my name is {name} and i'm {age:1.2f} years old")
 print('i like %s' %'apples')
 
-# list( index, Append, pop, sort, reverse)
+# list( index, Append, pop, sort, reverse) support item assignment
 
 list = [3,2,1]
 print(list)
@@ -55,12 +55,14 @@ dict2 = {'val1':[1, 2, 3], 'val2':'text'}
 print(dict2.values())
 print(dict2['val2'].upper())
 
-# Tuples(count, index)
+# Tuples(count, index), does not support item assignment
 
 t = (1, 'Matheus', 2, 3, 4.2, 1, 1)
 print(t)
 print(t.count(1))
 print(t.index("Matheus"))
+t[0] = 2
+print(t)
 
 # sets -> unique elements
 mylist = [1,2,2,2,2,2,2,3,3,3,3,4,4,44,5,5,6]
@@ -69,7 +71,7 @@ print(myset)
 myset.add(100)
 print(myset)
 print(set(mylist).add(100))
-name = "Matheus"
+name = "Matheussss"
 print(set(name))
 
 # Booleans
@@ -77,3 +79,22 @@ print(set(name))
 print(1 > 2)
 print(2 == 2)
 print(10 % 2 == 0)
+
+# IO r-> read w-> write a->append
+
+f = open("teste.txt", "w")
+f.write("texto de teste!")
+
+f = open("teste.txt", "r")
+print(f.read())
+print(f.readlines())
+
+f = open("teste.txt", "a")
+f.write("12345678910")
+
+f = open("teste.txt", "r")
+print(f.read())
+f.close
+
+with open("teste2.txt", "w") as f:
+    f.write("teste123")
