@@ -187,6 +187,8 @@ print(make_pi())
 # rotate_left3([7, 0, 0]) → [0, 0, 7]
 #
 #
+
+
 def rotate_left3(nums):
     x = [nums[1], nums[len(nums) - 1], nums[0]]
     print(x)
