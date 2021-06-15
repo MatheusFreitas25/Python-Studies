@@ -35,6 +35,5 @@ for numbers in range(1,101):
 #Use List Comprehension to create a list of the first letters of every word in the string below:
 import distutils.util
 st1 = 'Create a list of the first letters of every word in this string'
-st2 = st1.split()
-word1 = [word[0] for word in st2]
+word1 = [word[0] for word in st1.split()]
 print(word1)
