@@ -115,4 +115,4 @@ while i <= 9:
         verificaseganhou(linha3, posicao, linha1, linha2, simbolo)
 
     i = i + 1
-print("VELHA!")
+print("VELHA!!")
