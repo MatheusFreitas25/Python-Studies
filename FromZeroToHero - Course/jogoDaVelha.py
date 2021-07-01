@@ -62,7 +62,7 @@ linha2 = ['', '', '']
 linha3 = ['', '', '']
 numerosValidos = [1, 2, 3]
 simbolosValidos = ['x', 'o']
-
+jogada =[]
 print("x inicia a partida")
 while i <= 9:
 
@@ -78,6 +78,26 @@ while i <= 9:
     posicao = int(input("Digite a posicao 1, 2 ou 3: "))
     while posicao not in numerosValidos:
         posicao = int(input("Digite a posicao 1, 2 ou 3: "))
+
+    posicaojogada=str(linha)+ str(posicao)
+
+    if i == 1:
+        jogada.append(posicaojogada)
+    else:
+        if posicaojogada in jogada:
+            print("POSICAO JA FOI JOGADA, DIGITE NOVAMENTE")
+            print("\n")
+            while posicaojogada in jogada:
+                linha = int(input("Digite a linha 1, 2 ou 3: "))
+                while linha not in numerosValidos:
+                    linha = int(input("Digite a linha 1, 2 ou 3: "))
+
+                posicao = int(input("Digite a posicao 1, 2 ou 3: "))
+                while posicao not in numerosValidos:
+                    posicao = int(input("Digite a posicao 1, 2 ou 3: "))
+                posicaojogada = str(linha) + str(posicao)
+
+    jogada.append(posicaojogada)
 
     if linha == 1:
         linha1[int(posicao - 1)] = simbolo
@@ -95,3 +115,4 @@ while i <= 9:
         verificaseganhou(linha3, posicao, linha1, linha2, simbolo)
 
     i = i + 1
+print("VELHA!!")
