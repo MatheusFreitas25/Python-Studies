@@ -28,7 +28,6 @@ for id in list_rental:
     df_data = df_new.append(rental_file[rental_file['issue_id'] == id])
     df_data = df_data.reset_index()
     data = df_data['updated_at'][0]
-    print(type(data))
     df_metadata = pd.DataFrame({"timestamp": [data],
                                 "record-type": ["data"],
                                 "operation": ["load"],
@@ -43,6 +42,7 @@ for id in list_rental:
 
 
 df_final = df_final.to_dict('records')
+
 
 kinesis = boto3.client("kinesis")
 
